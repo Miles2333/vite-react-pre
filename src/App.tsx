@@ -4,17 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-// 1. 识别常规的变量
-const name  =  "柴柴老师"
+// React中如何完成列表渲染
+// 技术方案: map  重复渲染的是哪个  
 
-// 2. 原生tex方法调用
-const getAge = ()=>{
-  return 18
-}
+//一个歌曲列表
+//想把这个列表渲染出来
+const songs = [
+  {id: 1, name: '痴心绝对'},
+  {id: 2, name: '像我这样的人'},
+  {id: 3, name: '南山南'}
+]
 
 
-//3. 三元运算符
-const flag = false
 
 
 function App() {
@@ -22,14 +23,11 @@ function App() {
 
   return (
     <div className='App'>
-      {name}
-      {getAge()}
-      {flag ? '真棒': '真菜'}
-      <h1>hello Vite</h1>
+      <ul>
+        {songs.map(song=> <li>{song.name}</li>)}
 
 
-
-
+      </ul>
 
     </div>
   )
