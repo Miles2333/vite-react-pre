@@ -4,26 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-// 有一个状态 type 1 2 3
-// 1 -> h1
-// 2 -> h2
-// 3 -> h3
 
-// 原则: 模板中的逻辑尽量保持精简
-// 复杂的多分枝逻辑， 收敛为一个函数 通过一个专门的函数来写分支逻辑，模板中只负责调用函数即可
 
-const getHtag = (type: number) =>{
-  if(type === 1){
-    return <h1>this is h1</h1>
-  }
+// 第五节课 - 样式控制
+// 1. 行业样式 - 在元素身上绑定一个style属性即可
 
-  if(type === 2){
-    return <h2>this is h2</h2>
-  }
+// 2. 类名样式 - 在元素身上绑定一个className属性即可
+// 2.1 导入语法
+import './app1.css'
 
-  if(type === 3){
-    return <h3>this is h3</h3>
-  }
+
+
+// 1.1 把颜色什么之类的存为一个变量，抽离出去，会更干净
+const style = {
+  color:'red', 
+  fontSize: '30px'
 }
 
 function App() {
@@ -31,9 +26,10 @@ function App() {
 
   return (
     <div className='App'>
-      {getHtag(1)}
-      {getHtag(2)}
-      {getHtag(3)}
+      <span style={style}> this is span </span>
+
+      <span className='active'>测试类名样式</span>
+
 
     </div>
   )
