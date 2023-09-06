@@ -4,30 +4,24 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-// React中如何完成列表渲染
-// 技术方案: map  重复渲染的是哪个  
-
-//一个歌曲列表
-//想把这个列表渲染出来
-const songs = [
-  {id: 1, name: '痴心绝对'},
-  {id: 2, name: '像我这样的人'},
-  {id: 3, name: '南山南'}
-]
 
 
+//条件渲染
+//技术方案: 三元表达式(常用)  逻辑和运算
 
+// 1. 三元表达式 - 满足条件才渲染一个span标签
+// 2. &&
 
+const flag = false
 function App() {
 
 
   return (
     <div className='App'>
-      <ul>
-        {songs.map(song=> <li>{song.name}</li>)}
+      {flag ? <span> this is span</span>: null}
 
-
-      </ul>
+      // 前面布尔值为true 后面的span标签才会显示【这个字段需要被删除】
+      {true && <span>this is span</span>}
 
     </div>
   )
